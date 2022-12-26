@@ -1,5 +1,3 @@
-library besafe;
-
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
