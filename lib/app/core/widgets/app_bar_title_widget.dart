@@ -6,9 +6,11 @@ import '../utils/constants.dart';
 
 class AppBarTitleWidget extends StatelessWidget {
   final Uint8List? customLogo;
+  final double height;
   const AppBarTitleWidget({
     Key? key,
     required this.customLogo,
+    required this.height,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -21,8 +23,8 @@ class AppBarTitleWidget extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.25,
             )
           : Image.asset(
-              logoSafety4MeWhiteImageSource,
-              height: kToolbarHeight * 0.8,
+              logoSafety4MeSource,
+              height: height,
             ),
     );
   }

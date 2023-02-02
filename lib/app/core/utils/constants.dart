@@ -1,10 +1,10 @@
-
 //Image paths
 import 'package:flutter/material.dart';
 
 const String imagePath = 'assets/images/';
 const String logoSafety4MeWhiteImageSource =
     '${imagePath}LogoSafety4MeWhite.png';
+const String logoSafety4MeSource = '${imagePath}LogoSafety4Me.png';
 const String sadImageSource = '${imagePath}Sad.png';
 const String neutralImageSource = '${imagePath}Neutral.png';
 const String veryGoodImageSource = '${imagePath}Verygood.png';
