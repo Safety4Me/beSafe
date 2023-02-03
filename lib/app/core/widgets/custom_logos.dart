@@ -8,13 +8,13 @@ class CustomLogos extends StatelessWidget {
   final bool isLandscape;
   final CrossAxisAlignment positionLogo;
   final Uint8List? logoCliente;
-  final double? size;
+  final double size;
   const CustomLogos({
     Key? key,
     required this.logoCliente,
     required this.isLandscape,
     required this.positionLogo,
-    this.size,
+    required this.size,
   }) : super(key: key);
 
   @override
@@ -30,8 +30,8 @@ class CustomLogos extends StatelessWidget {
                   ? Image.memory(
                       logoCliente!,
                       fit: BoxFit.contain,
-                      height: MediaQuery.of(context).size.height * size!,
-                      width: MediaQuery.of(context).size.height * size!,
+                      height: MediaQuery.of(context).size.height * size,
+                      width: MediaQuery.of(context).size.height * size,
                     )
                   : Container(),
             ],
@@ -43,7 +43,7 @@ class CustomLogos extends StatelessWidget {
               children: [
                 logoCliente != null
                     ? Image.memory(logoCliente!,
-                        height: MediaQuery.of(context).size.height * 0.25,
+                        height: MediaQuery.of(context).size.height * size,
                         width: MediaQuery.of(context).size.height)
                     : Container(),
               ],
