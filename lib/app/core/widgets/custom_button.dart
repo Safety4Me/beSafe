@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
 
-
 class CustomButton extends StatelessWidget {
   final Widget child;
   final Function()? onPressed;
@@ -31,7 +30,7 @@ class CustomButton extends StatelessWidget {
         width: size.width * percentualWidth,
         height: height ?? 44,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(5),
           color: buttonColor,
           boxShadow: [
             BoxShadow(

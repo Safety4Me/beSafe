@@ -14,18 +14,21 @@ class AppBarTitleWidget extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 2.0, bottom: 2.0),
-      child: customLogo != null
-          ? Image.memory(
-              customLogo!,
-              height: MediaQuery.of(context).size.height * 0.25,
-              width: MediaQuery.of(context).size.width * 0.25,
-            )
-          : Image.asset(
-              logoSafety4MeSource,
-              height: height,
-            ),
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 2.0, bottom: 2.0),
+        child: customLogo != null
+            ? Image.memory(
+                customLogo!,
+                height: MediaQuery.of(context).size.height * 0.25,
+                width: MediaQuery.of(context).size.width * 0.25,
+              )
+            : Image.asset(
+                logoSafety4MeSource,
+                height: height,
+              ),
+      ),
     );
   }
 }
