@@ -7,17 +7,15 @@ import '../utils/constants.dart';
 class AppBarTitleWidget extends StatelessWidget {
   final Uint8List? customLogo;
   final double height;
-  final Alignment alignment;
   const AppBarTitleWidget({
     Key? key,
     required this.customLogo,
     required this.height,
-    required this.alignment,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: alignment,
+      alignment: customLogo != null ? Alignment.center : Alignment.centerLeft,
       child: Padding(
         padding: const EdgeInsets.only(top: 2.0, bottom: 2.0),
         child: customLogo != null
