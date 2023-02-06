@@ -12,7 +12,7 @@ class CardWidget extends StatelessWidget {
 
   final bool columnAligment;
   final bool isLandscape;
-  
+
   const CardWidget({
     Key? key,
     required this.cardHeight,
@@ -20,8 +20,8 @@ class CardWidget extends StatelessWidget {
     required this.cardAlignment,
     this.cardWidth,
     this.borderRadius,
-    this.columnAligment = false, 
-    required this.isLandscape, 
+    this.columnAligment = false,
+    required this.isLandscape,
     required this.getCardWidth,
   }) : super(key: key);
 
@@ -36,14 +36,13 @@ class CardWidget extends StatelessWidget {
         alignment: cardAlignment ?? Alignment.center,
         child: SizedBox(
           height: cardHeight,
-          width: cardWidth ??
-              getCardWidth,
+          width: cardWidth ?? getCardWidth,
           child: Card(
             color: Colors.white,
             elevation: 15,
             shape: RoundedRectangleBorder(
                 borderRadius:
-                    BorderRadius.all(Radius.circular(borderRadius ?? 15))),
+                    BorderRadius.all(Radius.circular(borderRadius ?? 5))),
             child: Padding(
               padding: const EdgeInsets.all(4.0),
               child: Column(
