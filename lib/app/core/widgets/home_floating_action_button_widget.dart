@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/constants.dart';
+
 class HomeFloatingActionButtonWidget extends StatelessWidget {
   final Function onPressed;
   const HomeFloatingActionButtonWidget({
@@ -13,7 +15,7 @@ class HomeFloatingActionButtonWidget extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.secondary,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Image.asset('assets/images/Home.png'),
+        child: Image.asset(homeIcon),
       ),
       onPressed: () {
         onPressed();
