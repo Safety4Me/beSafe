@@ -8,7 +8,7 @@ const String logoSafety4MeSource = '${imagePath}LogoSafety4Me.png';
 const String sadImageSource = '${imagePath}Sad.png';
 const String neutralImageSource = '${imagePath}Neutral.png';
 const String veryGoodImageSource = '${imagePath}Verygood.png';
-const String homeIcon = '${imagePath}home.png';
+const String homeIcon = '${imagePath}Home.png';
 const String desktopBackgroundEmptyImageSource =
     '${imagePath}DesktopBackgroundEmpty.png';
 const String mobileBackgroundEmptyImageSource =
