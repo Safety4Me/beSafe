@@ -20,7 +20,7 @@ class CustomAlertWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(5),
       ),
       elevation: 10,
       backgroundColor: darkAlabasterColor,
