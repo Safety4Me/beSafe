@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../utils/constants.dart';
-
 class ImagesOfEvaluation extends StatelessWidget {
   final int? value;
   final VoidCallback? setValue0;
@@ -15,6 +13,9 @@ class ImagesOfEvaluation extends StatelessWidget {
   final VoidCallback? setValue8;
   final VoidCallback? setValue9;
   final VoidCallback? setValue10;
+  final String sadImageSource;
+  final String veryGoodImageSource;
+  final String neutralImageSource;
   const ImagesOfEvaluation({
     Key? key,
     this.value,
@@ -29,6 +30,9 @@ class ImagesOfEvaluation extends StatelessWidget {
     this.setValue8,
     this.setValue9,
     this.setValue10,
+    required this.sadImageSource,
+    required this.veryGoodImageSource,
+    required this.neutralImageSource,
   }) : super(key: key);
 
   @override

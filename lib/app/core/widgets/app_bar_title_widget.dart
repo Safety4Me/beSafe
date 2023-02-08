@@ -2,15 +2,15 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 
-import '../utils/constants.dart';
-
 class AppBarTitleWidget extends StatelessWidget {
   final Uint8List? customLogo;
   final double height;
+  final String logoSafety4me;
   const AppBarTitleWidget({
     Key? key,
     required this.customLogo,
     required this.height,
+    required this.logoSafety4me,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class AppBarTitleWidget extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.25,
               )
             : Image.asset(
-                logoSafety4MeSource,
+                logoSafety4me,
                 height: height,
               ),
       ),

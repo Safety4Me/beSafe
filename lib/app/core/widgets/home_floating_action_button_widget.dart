@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../utils/constants.dart';
-
 class HomeFloatingActionButtonWidget extends StatelessWidget {
   final Function onPressed;
+  final String homeIcon;
   const HomeFloatingActionButtonWidget({
     Key? key,
     required this.onPressed,
+    required this.homeIcon,
   }) : super(key: key);
 
   @override
