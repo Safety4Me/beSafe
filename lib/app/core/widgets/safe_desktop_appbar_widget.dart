@@ -9,29 +9,23 @@ class SafeDesktopAppBarWidget extends StatelessWidget
   final double toolbarHeight;
   final bool isLandscape;
   final bool showButtonTvDoctor;
-  final Function onPressed;
   final Function onTapLeading;
   final Function onTapAbout;
   final Function onTapOurMission;
   final Function onTapPrivacyPolicy;
-  final Function onPressedYesShowDialog;
+  final Function onTapDoctorTv;
   final String backgroundAppBar;
-  final String wishContinueText;
   final String yWhiteLogoImageSource;
   final String aboutText;
   final String privacyPolicyText;
   final String ourMissionText;
   final String doctorTvText;
-  final String externLinkMessage;
-  final String goBackText;
-  final String yes;
   final String? hospitalName;
   final Uint8List? logoClient;
   final bool isUS;
   const SafeDesktopAppBarWidget(
       {super.key,
       required this.toolbarHeight,
-      required this.onPressed,
       required this.backgroundAppBar,
       required this.isLandscape,
       required this.isUS,
@@ -47,11 +41,7 @@ class SafeDesktopAppBarWidget extends StatelessWidget
       required this.onTapOurMission,
       required this.onTapPrivacyPolicy,
       required this.showButtonTvDoctor,
-      required this.wishContinueText,
-      required this.externLinkMessage,
-      required this.goBackText,
-      required this.yes,
-      required this.onPressedYesShowDialog});
+      required this.onTapDoctorTv});
 
   @override
   Widget build(BuildContext context) {
@@ -137,9 +127,7 @@ class SafeDesktopAppBarWidget extends StatelessWidget
                           doctorTvText,
                           style: TextStyle(color: Colors.white, fontSize: 20.0),
                         ),
-                        onTap: () {
-                          _showDialog(wishContinueText, context);
-                        },
+                        onTap: () => onTapDoctorTv(),
                       ),
                     ),
                   ],
@@ -178,29 +166,6 @@ class SafeDesktopAppBarWidget extends StatelessWidget
         ),
       ),
     );
-  }
-
-  _showDialog(String message, BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((_) => showDialog(
-          context: context,
-          barrierDismissible: false,
-          builder: (BuildContext context) {
-            return CustomAlertWidget(
-              title: Text(externLinkMessage),
-              content: Text(message),
-              actions: [
-                TextButton(
-                    child: Text(goBackText),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    }),
-                SizedBox(height: 20),
-                TextButton(
-                    child: Text(yes), onPressed: () => onPressedYesShowDialog())
-              ],
-            );
-          },
-        ));
   }
 
   @override
