@@ -24,3 +24,5 @@ export 'app/core/widgets/text_form_field_widget.dart';
 export 'app/core/widgets/safe_gridview_widget.dart';
 export 'app/core/widgets/safe_gridview_desktop_widget.dart';
 export 'app/core/widgets/safe_buttom_home_row_widget.dart';
+export 'app/core/widgets/safe_appbar_widget.dart';
+export 'app/core/widgets/safe_desktop_appbar_widget.dart';
