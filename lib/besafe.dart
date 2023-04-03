@@ -21,3 +21,6 @@ export 'app/core/widgets/home_floating_action_button_widget.dart';
 export 'app/core/widgets/image_card_widget.dart';
 export 'app/core/widgets/images_of_evaluation.dart';
 export 'app/core/widgets/text_form_field_widget.dart';
+export 'app/core/widgets/safe_gridview_widget.dart';
+export 'app/core/widgets/safe_gridview_desktop_widget.dart';
+export 'app/core/widgets/safe_buttom_home_row_widget.dart';
