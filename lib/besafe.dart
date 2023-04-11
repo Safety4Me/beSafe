@@ -34,3 +34,5 @@ export 'app/core/widgets/nps_s_card_widget.dart';
 export 'app/core/widgets/nps_s_explanation_widget.dart';
 export 'app/core/widgets/nps_s_title_widget.dart';
 export 'app/core/widgets/radio_button_widget.dart';
+export 'app/core/widgets/check_box_list_tile_widget.dart';
+export 'app/core/widgets/contact_body_widget.dart';
