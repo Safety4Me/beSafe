@@ -9,9 +9,9 @@ class ContactBodyWidget extends StatefulWidget {
   final double getCardWidth;
   final bool isLandscape;
   final bool landscapeOrientation;
-  final String? contactSessionName;
-  final String? contactSessionTelephone;
-  final String? contactSessionEmail;
+  final String contactSessionName;
+  final String contactSessionTelephone;
+  final String contactSessionEmail;
   final String nameRequired;
   final String name;
   final String phoneOrEmailRequired;
@@ -51,14 +51,10 @@ class _ContactBodyWidgetState extends State<ContactBodyWidget> {
 
   @override
   void initState() {
-    if (widget.contactSessionName != null) {
-      widget.nameController.text =
-          widget.contactSessionName != null ? widget.contactSessionName! : '';
-      widget.emailController.text =
-          widget.contactSessionEmail != null ? widget.contactSessionEmail! : '';
-      widget.telephoneController.text = widget.contactSessionTelephone != null
-          ? widget.contactSessionTelephone!
-          : '';
+    if (widget.contactSessionName != '') {
+      widget.nameController.text = widget.contactSessionName;
+      widget.emailController.text = widget.contactSessionEmail;
+      widget.telephoneController.text = widget.contactSessionTelephone;
     }
     super.initState();
   }
@@ -172,16 +168,16 @@ class _ContactBodyWidgetState extends State<ContactBodyWidget> {
                       } else {
                         isAnonymous = value!;
                         widget.nameController.text =
-                            widget.contactSessionName != null
-                                ? widget.contactSessionName!
+                            widget.contactSessionName != ''
+                                ? widget.contactSessionName
                                 : '';
                         widget.emailController.text =
-                            widget.contactSessionEmail != null
-                                ? widget.contactSessionEmail!
+                            widget.contactSessionEmail != ''
+                                ? widget.contactSessionEmail
                                 : '';
                         widget.telephoneController.text =
-                            widget.contactSessionTelephone != null
-                                ? widget.contactSessionTelephone!
+                            widget.contactSessionTelephone != ''
+                                ? widget.contactSessionTelephone
                                 : '';
                       }
                     });
