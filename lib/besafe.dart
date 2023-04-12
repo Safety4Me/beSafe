@@ -37,3 +37,4 @@ export 'app/core/widgets/radio_button_widget.dart';
 export 'app/core/widgets/check_box_list_tile_widget.dart';
 export 'app/core/widgets/contact_body_widget.dart';
 export 'app/core/widgets/slider_answer_evaluation_widget.dart';
+export 'app/core/widgets/privacy_policy_widget.dart';
