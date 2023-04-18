@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../utils/constants.dart';
-
 class NpsSExplanationWidget extends StatelessWidget {
   final String npsSText;
   const NpsSExplanationWidget({super.key, required this.npsSText});
@@ -9,10 +7,8 @@ class NpsSExplanationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    var textStyle = Theme.of(context)
-        .textTheme
-        .titleSmall!
-        .copyWith(color: pacificBlueColor, fontSize: size.height * 0.02);
+    var textStyle = Theme.of(context).textTheme.titleSmall!.copyWith(
+        color: Theme.of(context).primaryColor, fontSize: size.height * 0.02);
 
     return SizedBox(
       height: size.height * 0.16,
