@@ -102,10 +102,13 @@ class _NpsSCardWidgetState extends State<NpsSCardWidget> {
                       CustomButton(
                         child: Text(
                           widget.no,
-                          style: Theme.of(context).textTheme.button!.copyWith(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelLarge!
+                              .copyWith(
+                                  color: Theme.of(context).primaryColor,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
                         ),
                         onPressed: () => widget.onPressed(),
                         buttonColor: alabasterButton,
@@ -114,10 +117,13 @@ class _NpsSCardWidgetState extends State<NpsSCardWidget> {
                       CustomButton(
                         child: Text(
                           widget.yes,
-                          style: Theme.of(context).textTheme.button!.copyWith(
-                              color: alabasterColor,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelLarge!
+                              .copyWith(
+                                  color: alabasterColor,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
                         ),
                         onPressed: () {
                           setState(() {

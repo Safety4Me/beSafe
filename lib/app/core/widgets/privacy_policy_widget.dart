@@ -64,7 +64,7 @@ class _PrivacyPolicyWidget extends State<PrivacyPolicyWidget> {
                 cursorColor: blackSafety4MeColor,
                 textAlign:
                     widget.isLandscape ? TextAlign.center : TextAlign.left,
-                style: Theme.of(context).textTheme.headline6!.copyWith(
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: Theme.of(context).primaryColor, fontSize: 22),
               ),
             ),
@@ -121,7 +121,7 @@ class _PrivacyPolicyWidget extends State<PrivacyPolicyWidget> {
           CustomButton(
             child: Text(
               widget.privacyPolicyPageDisagree,
-              style: Theme.of(context).textTheme.button!.copyWith(
+              style: Theme.of(context).textTheme.labelLarge!.copyWith(
                     color: Theme.of(context).primaryColor,
                   ),
             ),
@@ -132,7 +132,7 @@ class _PrivacyPolicyWidget extends State<PrivacyPolicyWidget> {
           CustomButton(
             child: Text(
               widget.privacyPolicyPageAgree,
-              style: Theme.of(context).textTheme.button!.copyWith(
+              style: Theme.of(context).textTheme.labelLarge!.copyWith(
                     color: Theme.of(context).colorScheme.secondary,
                   ),
             ),
@@ -162,7 +162,7 @@ class _PrivacyPolicyWidget extends State<PrivacyPolicyWidget> {
                 widget.privacyPolicyPageText,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText2!
+                    .bodyMedium!
                     .copyWith(color: Theme.of(context).primaryColor),
                 textAlign: TextAlign.justify,
               ),

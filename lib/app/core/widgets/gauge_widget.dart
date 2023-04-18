@@ -18,7 +18,7 @@ class Gauge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    var valueStyle = Theme.of(context).textTheme.caption!.copyWith(
+    var valueStyle = Theme.of(context).textTheme.bodySmall!.copyWith(
         color: blackSafety4MeColor,
         fontSize: size.height * 0.017,
         fontWeight: FontWeight.bold);
@@ -114,14 +114,14 @@ class Gauge extends StatelessWidget {
   TextStyle numberStyle(bool isLandscape, BuildContext context,
       bool orientationLandscape, Size size) {
     return isLandscape
-        ? Theme.of(context).textTheme.headline4!.copyWith(
+        ? Theme.of(context).textTheme.headlineMedium!.copyWith(
               color: lightPacificBlueColor,
             )
         : orientationLandscape
             ? Theme.of(context).textTheme.titleSmall!.copyWith(
                   color: lightPacificBlueColor,
                 )
-            : Theme.of(context).textTheme.headline4!.copyWith(
+            : Theme.of(context).textTheme.headlineMedium!.copyWith(
                 color: lightPacificBlueColor,
                 fontSize: size.height * 0.05,
                 fontWeight: FontWeight.bold);

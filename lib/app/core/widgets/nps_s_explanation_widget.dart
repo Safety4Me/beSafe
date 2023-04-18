@@ -11,7 +11,7 @@ class NpsSExplanationWidget extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     var textStyle = Theme.of(context)
         .textTheme
-        .subtitle2!
+        .titleSmall!
         .copyWith(color: pacificBlueColor, fontSize: size.height * 0.02);
 
     return SizedBox(

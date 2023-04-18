@@ -32,8 +32,8 @@ class TextFormFieldWidget extends StatelessWidget {
     this.onFieldSubmitted,
     this.inputFormatters,
     this.onChanged,
-    this.validator, 
-    required this.isLandscape, 
+    this.validator,
+    required this.isLandscape,
     required this.landscapeOrientation,
   }) : super(
           key: key,
@@ -70,10 +70,10 @@ class TextFormFieldWidget extends StatelessWidget {
           ),
           textAlign: TextAlign.start,
           style: isLandscape
-              ? Theme.of(context).textTheme.bodyText2
+              ? Theme.of(context).textTheme.bodyMedium
               : landscapeOrientation
                   ? Theme.of(context).textTheme.bodySmall
-                  : Theme.of(context).textTheme.bodyText2,
+                  : Theme.of(context).textTheme.bodyMedium,
           cursorColor: textColor,
           validator: validator as String? Function(String?),
           enabled: enabled,

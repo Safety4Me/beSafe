@@ -19,14 +19,14 @@ class NpsSTitle extends StatelessWidget {
         child: Text(ipsp,
             textAlign: TextAlign.center,
             style: isLandscape
-                ? Theme.of(context).textTheme.headline6!.copyWith(
+                ? Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: Theme.of(context).primaryColor,
                     fontSize: size.height * 0.035)
                 : orientationLandscape
-                    ? Theme.of(context).textTheme.subtitle2!.copyWith(
+                    ? Theme.of(context).textTheme.titleSmall!.copyWith(
                         color: Theme.of(context).primaryColor,
                         fontSize: size.height * 0.035)
-                    : Theme.of(context).textTheme.headline6!.copyWith(
+                    : Theme.of(context).textTheme.titleLarge!.copyWith(
                         color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w600,
                         fontSize: size.height * 0.03)),

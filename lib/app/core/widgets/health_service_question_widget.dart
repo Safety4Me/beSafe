@@ -23,7 +23,7 @@ class HealthServiceQuestion extends StatelessWidget {
       child: Center(
         child: Text('$npsSTitle $healthServiceName?',
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headline6!.copyWith(
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: textColor,
                   fontSize: isLandscape
                       ? 22
