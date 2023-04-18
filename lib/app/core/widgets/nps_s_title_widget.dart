@@ -29,7 +29,7 @@ class NpsSTitle extends StatelessWidget {
                     : Theme.of(context).textTheme.titleLarge!.copyWith(
                         color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w600,
-                        fontSize: size.height * 0.03)),
+                        fontSize: size.height * 0.024)),
       ),
     );
   }
