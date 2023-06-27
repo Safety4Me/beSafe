@@ -10,7 +10,7 @@ class CardWidget extends StatelessWidget {
   final double? borderRadius;
   final double getCardWidth;
 
-  final bool columnAligment;
+  final MainAxisAlignment? columnAligment;
   final bool isLandscape;
 
   const CardWidget({
@@ -20,7 +20,7 @@ class CardWidget extends StatelessWidget {
     required this.cardAlignment,
     this.cardWidth,
     this.borderRadius,
-    this.columnAligment = false,
+    this.columnAligment,
     required this.isLandscape,
     required this.getCardWidth,
   }) : super(key: key);
@@ -46,9 +46,9 @@ class CardWidget extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(4.0),
               child: Column(
-                mainAxisAlignment: columnAligment
+                mainAxisAlignment: columnAligment == null
                     ? MainAxisAlignment.center
-                    : MainAxisAlignment.center,
+                    : columnAligment!,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: children,
               ),
