@@ -40,10 +40,10 @@ class SafeGridViewDesktopWidget extends StatelessWidget {
               children: [
                 Expanded(flex: 1, child: buttonVideo),
                 Visibility(
-                    visible: isUS || isDoctorTV ? false : true,
+                    visible: isUS || isDoctorTV == false ? false : true,
                     child: Expanded(flex: 1, child: buttonDoctorTv)),
                 Expanded(
-                    flex: isUS || isDoctorTV ? 2 : 1,
+                    flex: isUS || isDoctorTV == false ? 2 : 1,
                     child: buttonDiaryEvaluation),
                 Expanded(flex: 1, child: buttonRadio),
               ],
