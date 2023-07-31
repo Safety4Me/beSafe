@@ -7,6 +7,7 @@ class SafeGridViewWidget extends StatelessWidget {
   final Widget buttonDiaryEvaluation;
   final Widget buttonRadio;
   final bool enUs;
+  final bool isDoctorTV;
   const SafeGridViewWidget(
       {super.key,
       required this.buttonContact,
@@ -14,7 +15,8 @@ class SafeGridViewWidget extends StatelessWidget {
       required this.buttonDoctorTv,
       required this.buttonDiaryEvaluation,
       required this.buttonRadio,
-      required this.enUs});
+      required this.enUs,
+      required this.isDoctorTV});
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +42,10 @@ class SafeGridViewWidget extends StatelessWidget {
                   child: Column(
                     children: [
                       Expanded(
-                          flex: enUs ? 3 : 2, child: buttonDiaryEvaluation),
+                          flex: enUs || isDoctorTV ? 3 : 2,
+                          child: buttonDiaryEvaluation),
                       Visibility(
-                          visible: enUs ? false : true,
+                          visible: enUs || isDoctorTV ? false : true,
                           child: Expanded(flex: 1, child: buttonDoctorTv)),
                     ],
                   ),

@@ -117,11 +117,8 @@ class SafeDesktopAppBarWidget extends StatelessWidget
                       onTap: () => onTapOurMission(),
                     ),
                     Visibility(
-                      visible: isUS
-                          ? false
-                          : showButtonTvDoctor
-                              ? true
-                              : false,
+                      visible:
+                          isUS || showButtonTvDoctor == false ? false : true,
                       child: InkWell(
                         child: Text(
                           doctorTvText,
