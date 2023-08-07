@@ -37,7 +37,7 @@ class SafeGridViewWidget extends StatelessWidget {
           ),
           // row com colunas
           Expanded(
-            flex: isCheckout ? 2 : 3,
+            flex: 3,
             child: Row(
               children: [
                 //coluna 1
