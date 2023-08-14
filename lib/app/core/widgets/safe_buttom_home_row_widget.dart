@@ -9,6 +9,7 @@ class SafeButtomHomeWidget extends StatelessWidget {
   final String label;
   final String backgroundImage;
   final String iconImage;
+  final double sizeTextColumn;
   const SafeButtomHomeWidget(
       {super.key,
       required this.width,
@@ -18,7 +19,8 @@ class SafeButtomHomeWidget extends StatelessWidget {
       required this.backgroundImage,
       required this.iconImage,
       required this.sizeIcon,
-      required this.isRow});
+      required this.isRow,
+      required this.sizeTextColumn});
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +67,7 @@ class SafeButtomHomeWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Flexible(
+                        flex: 2,
                         fit: FlexFit.tight,
                         child: Padding(
                           padding: EdgeInsets.symmetric(
@@ -78,13 +81,13 @@ class SafeButtomHomeWidget extends StatelessWidget {
                         ),
                       ),
                       Flexible(
-                        flex: 2,
+                        flex: 1,
                         fit: FlexFit.tight,
                         child: Text(
                           label,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontSize: size.height * 0.025,
+                              fontSize: size.height * sizeTextColumn,
                               fontFamily: 'Raleway',
                               color: Colors.white),
                         ),
