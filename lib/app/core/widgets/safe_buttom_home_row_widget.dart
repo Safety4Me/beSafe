@@ -65,7 +65,6 @@ class SafeButtomHomeWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Flexible(
-                        flex: 2,
                         fit: FlexFit.tight,
                         child: Padding(
                           padding: EdgeInsets.symmetric(
@@ -79,7 +78,7 @@ class SafeButtomHomeWidget extends StatelessWidget {
                         ),
                       ),
                       Flexible(
-                        flex: 1,
+                        flex: 2,
                         fit: FlexFit.tight,
                         child: Text(
                           label,
