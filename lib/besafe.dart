@@ -39,3 +39,4 @@ export 'app/core/widgets/contact_body_widget.dart';
 export 'app/core/widgets/slider_answer_evaluation_widget.dart';
 export 'app/core/widgets/privacy_policy_widget.dart';
 export 'app/core/widgets/line_widget.dart';
+export 'app/core/widgets/dropdown_widget.dart';
