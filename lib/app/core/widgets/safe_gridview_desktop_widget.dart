@@ -38,10 +38,12 @@ class SafeGridViewDesktopWidget extends StatelessWidget {
                   flex: 2,
                   child: buttonContact!,
                 )
-              : SizedBox(),
-
+              : Expanded(
+                  flex: 1,
+                  child: SizedBox(),
+                ),
           Expanded(
-            flex: buttonContact != null ? 3 : 1,
+            flex: 3,
             child: Row(
               children: [
                 Expanded(flex: 1, child: buttonVideo),
@@ -61,7 +63,13 @@ class SafeGridViewDesktopWidget extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
+          buttonContact != null
+              ? SizedBox()
+              : Expanded(
+                  flex: 1,
+                  child: SizedBox(),
+                ),
         ],
       ),
     );
