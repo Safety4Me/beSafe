@@ -33,15 +33,13 @@ class SafeGridViewDesktopWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           // botao fale com a equipe
-          buttonContact != null
-              ? Expanded(
-                  flex: 2,
-                  child: buttonContact!,
-                )
-              : Expanded(
-                  flex: 1,
-                  child: SizedBox(),
-                ),
+
+          Expanded(
+            flex: 2,
+            child:
+                buttonContact != null ? buttonContact! : buttonDiaryEvaluation,
+          ),
+
           Expanded(
             flex: 3,
             child: Row(
@@ -50,9 +48,12 @@ class SafeGridViewDesktopWidget extends StatelessWidget {
                 Visibility(
                     visible: isUS || isDoctorTV == false ? false : true,
                     child: Expanded(flex: 1, child: buttonDoctorTv)),
-                Expanded(
-                    flex: isUS || isDoctorTV == false ? 2 : 1,
-                    child: buttonDiaryEvaluation),
+                Visibility(
+                  visible: buttonContact != null ? true : false,
+                  child: Expanded(
+                      flex: isUS || isDoctorTV == false ? 2 : 1,
+                      child: buttonDiaryEvaluation),
+                ),
                 Expanded(flex: 1, child: buttonRadio),
                 Visibility(
                   visible: isCheckout,
@@ -64,12 +65,6 @@ class SafeGridViewDesktopWidget extends StatelessWidget {
               ],
             ),
           ),
-          buttonContact != null
-              ? SizedBox()
-              : Expanded(
-                  flex: 1,
-                  child: SizedBox(),
-                ),
         ],
       ),
     );
