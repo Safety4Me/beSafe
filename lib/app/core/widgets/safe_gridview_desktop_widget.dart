@@ -41,7 +41,7 @@ class SafeGridViewDesktopWidget extends StatelessWidget {
               : SizedBox(),
 
           Expanded(
-            flex: 3,
+            flex: buttonContact != null ? 3 : 1,
             child: Row(
               children: [
                 Expanded(flex: 1, child: buttonVideo),
