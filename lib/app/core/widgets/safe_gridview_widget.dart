@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SafeGridViewWidget extends StatelessWidget {
-  final Widget buttonContact;
+  final Widget? buttonContact;
   final Widget buttonVideo;
   final Widget buttonDoctorTv;
   final Widget buttonDiaryEvaluation;
@@ -31,10 +31,12 @@ class SafeGridViewWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           // botao fale com a equipe
-          Expanded(
-            flex: 1,
-            child: buttonContact,
-          ),
+          buttonContact != null
+              ? Expanded(
+                  flex: 1,
+                  child: buttonContact!,
+                )
+              : SizedBox(),
           // row com colunas
           Expanded(
             flex: 3,
