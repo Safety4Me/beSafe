@@ -24,28 +24,28 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Padding(
-      padding: EdgeInsets.all(padding ?? 4.0),
-      child: Container(
-        width: size.width * percentualWidth,
-        height: height ?? 44,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          color: buttonColor,
-          boxShadow: [
-            BoxShadow(
-              spreadRadius: -2,
-              blurRadius: 5,
-              offset: Offset(2, 2),
-              color: blackSafety4MeColor.withOpacity(0.5),
+    return InkWell(
+      borderRadius: BorderRadius.circular(15),
+      onTap: onPressed,
+      child: Align(
+        alignment: Alignment.center,
+        child: Padding(
+          padding: EdgeInsets.all(padding ?? 4.0),
+          child: Container(
+            width: size.width * percentualWidth,
+            height: height ?? 44,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: buttonColor,
+              boxShadow: [
+                BoxShadow(
+                  spreadRadius: -2,
+                  blurRadius: 5,
+                  offset: Offset(2, 2),
+                  color: blackSafety4MeColor.withOpacity(0.5),
+                ),
+              ],
             ),
-          ],
-        ),
-        child: InkWell(
-          borderRadius: BorderRadius.circular(15),
-          onTap: onPressed,
-          child: Align(
-            alignment: Alignment.center,
             child: child,
           ),
         ),
