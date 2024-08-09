@@ -119,22 +119,26 @@ class _PrivacyPolicyWidget extends State<PrivacyPolicyWidget> {
       child: ButtonRowCardWidget(
         children: [
           CustomButton(
-            child: Text(
-              widget.privacyPolicyPageDisagree,
-              style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                    color: Theme.of(context).primaryColor,
-                  ),
+            child: Center(
+              child: Text(
+                widget.privacyPolicyPageDisagree,
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                      color: Theme.of(context).primaryColor,
+                    ),
+              ),
             ),
             onPressed: widget.disagreOnPressed as dynamic Function()?,
             buttonColor: darkAlabasterColor,
             percentualWidth: widget.getCardButtonRowPercentualWidth,
           ),
           CustomButton(
-            child: Text(
-              widget.privacyPolicyPageAgree,
-              style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                    color: Theme.of(context).colorScheme.secondary,
-                  ),
+            child: Center(
+              child: Text(
+                widget.privacyPolicyPageAgree,
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+              ),
             ),
             onPressed: widget.agreOnPressed as dynamic Function()?,
             buttonColor: Theme.of(context).primaryColor,
