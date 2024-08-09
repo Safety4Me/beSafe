@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 class AppBarTitleWidget extends StatelessWidget {
   final Uint8List? customLogo;
   final double height;
-  final double widthLogoCustomer;
-  final double heightLogoCustomer;
+  final double? widthLogoCustomer;
+  final double? heightLogoCustomer;
   final String logoSafety4me;
   final bool isLandscape;
   const AppBarTitleWidget({
@@ -15,8 +15,8 @@ class AppBarTitleWidget extends StatelessWidget {
     required this.height,
     required this.logoSafety4me,
     required this.isLandscape,
-    required this.widthLogoCustomer,
-    required this.heightLogoCustomer,
+    this.widthLogoCustomer,
+    this.heightLogoCustomer,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -29,8 +29,12 @@ class AppBarTitleWidget extends StatelessWidget {
         child: customLogo != null
             ? Image.memory(
                 customLogo!,
-                height: MediaQuery.of(context).size.height * heightLogoCustomer,
-                width: MediaQuery.of(context).size.width * widthLogoCustomer,
+                height: heightLogoCustomer != null
+                    ? MediaQuery.of(context).size.height * heightLogoCustomer!
+                    : MediaQuery.of(context).size.height * 0.25,
+                width: widthLogoCustomer != null
+                    ? MediaQuery.of(context).size.width * widthLogoCustomer!
+                    : MediaQuery.of(context).size.width * 0.25,
               )
             : Image.asset(
                 logoSafety4me,
