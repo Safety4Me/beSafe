@@ -1,10 +1,8 @@
 // ignore_for_file: overridden_fields, annotate_overrides
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
-
 
 class SnackBarWidget extends SnackBar {
   final Widget content;
@@ -17,9 +15,9 @@ class SnackBarWidget extends SnackBar {
           duration: time ?? Duration(seconds: 4),
           key: key,
           content: content,
-          backgroundColor: describeEnum(status) == "error"
+          backgroundColor: status.name == "error"
               ? errorStatusSnackBarColor
-              : describeEnum(status) == "warning"
+              : status.name == "warning"
                   ? warningStatusSnackBarColor
                   : successStatusSnackBarColor,
         );
