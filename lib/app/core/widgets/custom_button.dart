@@ -46,7 +46,7 @@ class CustomButton extends StatelessWidget {
                 ),
               ],
             ),
-            child: child,
+            child: Center(child: child),
           ),
         ),
       ),
