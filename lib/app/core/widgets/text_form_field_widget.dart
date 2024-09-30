@@ -67,6 +67,15 @@ class TextFormFieldWidget extends StatelessWidget {
             hintStyle: TextStyle(
               color: Theme.of(context).primaryColor,
             ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.grey,
+                width: 1.0,
+              ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(5),
+              ),
+            ),
           ),
           textAlign: TextAlign.start,
           style: isLandscape
