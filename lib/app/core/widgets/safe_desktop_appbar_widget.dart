@@ -21,7 +21,7 @@ class SafeDesktopAppBarWidget extends StatelessWidget
   final String ourMissionText;
   final String doctorTvText;
   final String? hospitalName;
-  final Uint8List? logoClient;
+  final String? logoClient;
   final bool isUS;
   const SafeDesktopAppBarWidget(
       {super.key,

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class CustomLogos extends StatelessWidget {
   final bool isLandscape;
   final CrossAxisAlignment positionLogo;
-  final Uint8List? logoCliente;
+  final String? logoCliente;
   final double size;
   const CustomLogos({
     Key? key,
@@ -27,11 +27,15 @@ class CustomLogos extends StatelessWidget {
             crossAxisAlignment: WrapCrossAlignment.end,
             children: [
               logoCliente != null
-                  ? Image.memory(
+                  ? Image.network(
                       logoCliente!,
                       fit: BoxFit.contain,
                       height: MediaQuery.of(context).size.height * size,
                       width: MediaQuery.of(context).size.height * size,
+                      errorBuilder: (context, error, stackTrace) {
+                        debugPrint('Erro ao carregar imagem: $error');
+                        return Center(child: Icon(Icons.error));
+                      },
                     )
                   : Container(),
             ],
@@ -42,9 +46,15 @@ class CustomLogos extends StatelessWidget {
               crossAxisAlignment: positionLogo,
               children: [
                 logoCliente != null
-                    ? Image.memory(logoCliente!,
+                    ? Image.network(
+                        logoCliente!,
                         height: MediaQuery.of(context).size.height * size,
-                        width: MediaQuery.of(context).size.height)
+                        width: MediaQuery.of(context).size.height,
+                        errorBuilder: (context, error, stackTrace) {
+                          debugPrint('Erro ao carregar imagem: $error');
+                          return Center(child: Icon(Icons.error));
+                        },
+                      )
                     : Container(),
               ],
             ),
