@@ -1,9 +1,7 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 
 class AppBarTitleWidget extends StatelessWidget {
-  final Uint8List? customLogo;
+  final String? customLogo;
   final double height;
   final double? widthLogoCustomer;
   final double? heightLogoCustomer;
@@ -27,7 +25,7 @@ class AppBarTitleWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(top: 2.0, bottom: 2.0),
         child: customLogo != null
-            ? Image.memory(
+            ? Image.network(
                 customLogo!,
                 height: heightLogoCustomer != null
                     ? MediaQuery.of(context).size.height * heightLogoCustomer!
@@ -35,6 +33,10 @@ class AppBarTitleWidget extends StatelessWidget {
                 width: widthLogoCustomer != null
                     ? MediaQuery.of(context).size.width * widthLogoCustomer!
                     : MediaQuery.of(context).size.width * 0.25,
+                errorBuilder: (context, error, stackTrace) {
+                  debugPrint('Erro ao carregar imagem: $error');
+                  return Center(child: Icon(Icons.error));
+                },
               )
             : Image.asset(
                 logoSafety4me,
