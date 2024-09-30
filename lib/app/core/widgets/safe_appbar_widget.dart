@@ -1,5 +1,4 @@
 import 'package:besafe/besafe.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
@@ -10,7 +9,7 @@ class SafeAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String backgroundAppBar;
   final String logoSafety4MeWhiteImageSource;
   final String? hospitalName;
-  final Uint8List? logoClient;
+  final String? logoClient;
   final bool isLandscape;
   const SafeAppBarWidget(
       {super.key,
