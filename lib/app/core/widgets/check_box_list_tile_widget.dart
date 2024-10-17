@@ -15,12 +15,16 @@ class CheckBoxListTileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(4.0),
-      child: CheckboxListTile(
-        checkColor: Colors.white,
-        tileColor: Colors.grey.shade100,
-        onChanged: onChanged,
-        value: value,
-        title: Text(title),
+      child: Theme(
+        data: ThemeData(unselectedWidgetColor: Colors.white),
+        child: CheckboxListTile(
+          activeColor: Theme.of(context).primaryColor,
+          checkColor: Colors.white,
+          tileColor: Colors.grey.shade100,
+          onChanged: onChanged,
+          value: value,
+          title: Text(title),
+        ),
       ),
     );
   }
