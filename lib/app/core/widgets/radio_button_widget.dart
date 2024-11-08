@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../utils/constants.dart';
-
 class RadioButtonWidget extends StatelessWidget {
   const RadioButtonWidget({
     Key? key,
@@ -19,12 +17,19 @@ class RadioButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Radio(
-      activeColor: Theme.of(context).primaryColor,
-      hoverColor: darkAlabasterColor,
-      value: value,
-      groupValue: groupValue,
-      onChanged: onChanged,
+    bool selected = (value == groupValue);
+
+    return InkWell(
+      onTap: () => onChanged(value),
+      child: Container(
+        decoration:
+            BoxDecoration(shape: BoxShape.circle, color: Color(0xff059CB7)),
+        child: Icon(
+          Icons.circle,
+          size: 25,
+          color: selected ? Color(0xff059CB7) : Colors.grey[200],
+        ),
+      ),
     );
   }
 }
