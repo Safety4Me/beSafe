@@ -22,12 +22,12 @@ class RadioButtonWidget extends StatelessWidget {
     return InkWell(
       onTap: () => onChanged(value),
       child: Container(
-        decoration:
-            BoxDecoration(shape: BoxShape.circle, color: Color(0xff059CB7)),
+        decoration: BoxDecoration(
+            shape: BoxShape.circle, color: Theme.of(context).primaryColor),
         child: Icon(
           Icons.circle,
           size: 25,
-          color: selected ? Color(0xff059CB7) : Colors.grey[200],
+          color: selected ? Theme.of(context).primaryColor : Colors.grey[200],
         ),
       ),
     );
