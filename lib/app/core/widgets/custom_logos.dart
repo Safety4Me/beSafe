@@ -1,7 +1,5 @@
 // ignore_for_file: sized_box_for_whitespace
 
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 
 class CustomLogos extends StatelessWidget {
