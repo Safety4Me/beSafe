@@ -27,6 +27,8 @@ class CustomButton extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(15),
       onTap: onPressed,
+      hoverColor: Colors.transparent,
+      splashColor: Colors.transparent,
       child: Align(
         alignment: Alignment.center,
         child: Padding(
