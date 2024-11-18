@@ -27,15 +27,15 @@ class _SliderAnswerEvaluationWidgetState
     extends State<SliderAnswerEvaluationWidget> {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 4,
-      child: Padding(
-        padding:
-            EdgeInsets.symmetric(horizontal: widget.isLandscape ? 2.0 : 15.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            ImagesOfEvaluation(
+    return Padding(
+      padding:
+          EdgeInsets.symmetric(horizontal: widget.isLandscape ? 2.0 : 15.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 12.0),
+            child: ImagesOfEvaluation(
               neutralImageSource: widget.neutralImageSource,
               sadImageSource: widget.sadImageSource,
               veryGoodImageSource: widget.veryGoodImageSource,
@@ -52,15 +52,12 @@ class _SliderAnswerEvaluationWidgetState
               setValue9: () => widget.updateValue(9.0),
               setValue10: () => widget.updateValue(10.0),
             ),
-            Expanded(
-              flex: 3,
-              child: Center(
-                child: EvaluateSliderWidget(
-                    value: widget.value, updateValue: widget.updateValue),
-              ),
-            ),
-          ],
-        ),
+          ),
+          Center(
+            child: EvaluateSliderWidget(
+                value: widget.value, updateValue: widget.updateValue),
+          ),
+        ],
       ),
     );
   }
