@@ -33,22 +33,25 @@ class _SliderAnswerEvaluationWidgetState
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ImagesOfEvaluation(
-            neutralImageSource: widget.neutralImageSource,
-            sadImageSource: widget.sadImageSource,
-            veryGoodImageSource: widget.veryGoodImageSource,
-            value: widget.value.toInt(),
-            setValue0: () => widget.updateValue(0.0),
-            setValue1: () => widget.updateValue(1.0),
-            setValue2: () => widget.updateValue(2.0),
-            setValue3: () => widget.updateValue(3.0),
-            setValue4: () => widget.updateValue(4.0),
-            setValue5: () => widget.updateValue(5.0),
-            setValue6: () => widget.updateValue(6.0),
-            setValue7: () => widget.updateValue(7.0),
-            setValue8: () => widget.updateValue(8.0),
-            setValue9: () => widget.updateValue(9.0),
-            setValue10: () => widget.updateValue(10.0),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 12.0),
+            child: ImagesOfEvaluation(
+              neutralImageSource: widget.neutralImageSource,
+              sadImageSource: widget.sadImageSource,
+              veryGoodImageSource: widget.veryGoodImageSource,
+              value: widget.value.toInt(),
+              setValue0: () => widget.updateValue(0.0),
+              setValue1: () => widget.updateValue(1.0),
+              setValue2: () => widget.updateValue(2.0),
+              setValue3: () => widget.updateValue(3.0),
+              setValue4: () => widget.updateValue(4.0),
+              setValue5: () => widget.updateValue(5.0),
+              setValue6: () => widget.updateValue(6.0),
+              setValue7: () => widget.updateValue(7.0),
+              setValue8: () => widget.updateValue(8.0),
+              setValue9: () => widget.updateValue(9.0),
+              setValue10: () => widget.updateValue(10.0),
+            ),
           ),
           Center(
             child: EvaluateSliderWidget(
