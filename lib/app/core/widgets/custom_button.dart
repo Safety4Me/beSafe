@@ -29,6 +29,8 @@ class CustomButton extends StatelessWidget {
       onTap: onPressed,
       hoverColor: Colors.transparent,
       splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      focusColor: Colors.transparent,
       child: Align(
         alignment: Alignment.center,
         child: Padding(
