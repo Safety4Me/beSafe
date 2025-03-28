@@ -19,6 +19,7 @@ class PrivacyPolicyWidget extends StatefulWidget {
   final String privacyPolicyPageAgree;
   final String privacyPolicyPageText;
   final String privacyPolicyPageTextTitle;
+  final Color? titleColor;
 
   const PrivacyPolicyWidget({
     Key? key,
@@ -27,6 +28,7 @@ class PrivacyPolicyWidget extends StatefulWidget {
     this.disagreOnPressed,
     this.agreOnPressed,
     this.showTitle,
+    this.titleColor,
     required this.isLandscapeOrientation,
     required this.isLandscape,
     required this.getCardWidth,
@@ -65,7 +67,7 @@ class _PrivacyPolicyWidget extends State<PrivacyPolicyWidget> {
                 textAlign:
                     widget.isLandscape ? TextAlign.center : TextAlign.left,
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: Theme.of(context).primaryColor, fontSize: 22),
+                    color: widget.showTitle ?? Theme.of(context).primaryColor, fontSize: 22),
               ),
             ),
           ),
