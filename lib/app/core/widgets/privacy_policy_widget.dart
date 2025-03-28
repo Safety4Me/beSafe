@@ -67,7 +67,8 @@ class _PrivacyPolicyWidget extends State<PrivacyPolicyWidget> {
                 textAlign:
                     widget.isLandscape ? TextAlign.center : TextAlign.left,
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: widget.showTitle ?? Theme.of(context).primaryColor, fontSize: 22),
+                    color: widget.titleColor ?? Theme.of(context).primaryColor,
+                    fontSize: 22),
               ),
             ),
           ),
