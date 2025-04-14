@@ -8,12 +8,14 @@ class RadioButtonWidget extends StatelessWidget {
     required this.groupValue,
     required this.onChanged,
     required this.value,
+    this.sizeIcon,
   }) : super(key: key);
   final int index;
   final BuildContext context;
   final dynamic groupValue;
   final Function(dynamic) onChanged;
   final dynamic value;
+  final double? sizeIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class RadioButtonWidget extends StatelessWidget {
             shape: BoxShape.circle, color: Theme.of(context).primaryColor),
         child: Icon(
           Icons.circle,
-          size: 25,
+          size: sizeIcon ?? 25,
           color: selected ? Theme.of(context).primaryColor : Colors.grey[200],
         ),
       ),
