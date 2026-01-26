@@ -51,9 +51,7 @@ class SafeGridViewWidget extends StatelessWidget {
                     children: [
                       Expanded(
                           flex: enUs || isDoctorTV == false ? 3 : 2,
-                          child: customerId == 39
-                              ? buttonCheckout
-                              : buttonDiaryEvaluation),
+                          child: buttonDiaryEvaluation),
                       Visibility(
                           visible: enUs || isDoctorTV == false ? false : true,
                           child: Expanded(flex: 1, child: buttonDoctorTv)),
@@ -78,7 +76,7 @@ class SafeGridViewWidget extends StatelessWidget {
             visible: isCheckout,
             child: Expanded(
               flex: 1,
-              child: customerId == 39 ? buttonDiaryEvaluation : buttonCheckout,
+              child: buttonCheckout,
             ),
           ),
         ],
