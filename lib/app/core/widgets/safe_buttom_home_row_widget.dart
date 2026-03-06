@@ -4,6 +4,7 @@ class SafeButtomHomeWidget extends StatelessWidget {
   final bool isRow;
   final double width;
   final double padding;
+  final int customerId;
   final double sizeIcon;
   final Function onPressed;
   final String label;
@@ -20,6 +21,7 @@ class SafeButtomHomeWidget extends StatelessWidget {
       required this.iconImage,
       required this.sizeIcon,
       required this.isRow,
+      required this.customerId,
       this.sizeTextColumn});
 
   @override
@@ -65,36 +67,55 @@ class SafeButtomHomeWidget extends StatelessWidget {
                   )
                 : Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Flexible(
-                        flex: 2,
-                        fit: FlexFit.tight,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 8.0,
-                          ),
-                          child: Image.asset(
-                            iconImage,
-                            height: sizeIcon,
-                            width: sizeIcon,
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        flex: 1,
-                        fit: FlexFit.tight,
-                        child: Text(
-                          label,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: sizeTextColumn != null
-                                  ? size.height * sizeTextColumn!
-                                  : size.height * 0.025,
-                              fontFamily: 'Raleway',
-                              color: Colors.white),
-                        ),
-                      ),
-                    ],
+                    children: customerId == 38
+                        ? [
+                            Image.asset(
+                              iconImage,
+                              height: sizeIcon,
+                              width: sizeIcon,
+                            ),
+                            SizedBox(height: 8), // espaçamento fixo pequeno
+                            Text(
+                              label,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: sizeTextColumn != null
+                                      ? size.height * sizeTextColumn!
+                                      : size.height * 0.025,
+                                  fontFamily: 'Raleway',
+                                  color: Colors.white),
+                            ),
+                          ]
+                        : [
+                            Flexible(
+                              flex: 2,
+                              fit: FlexFit.tight,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 8.0,
+                                ),
+                                child: Image.asset(
+                                  iconImage,
+                                  height: sizeIcon,
+                                  width: sizeIcon,
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              flex: 1,
+                              fit: FlexFit.tight,
+                              child: Text(
+                                label,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: sizeTextColumn != null
+                                        ? size.height * sizeTextColumn!
+                                        : size.height * 0.025,
+                                    fontFamily: 'Raleway',
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ],
                   ),
             onPressed: () => onPressed()),
       ),

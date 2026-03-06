@@ -66,7 +66,16 @@ class SafeGridViewWidget extends StatelessWidget {
                   child: Column(
                     children: [
                       Expanded(flex: 1, child: buttonVideo),
-                      Expanded(flex: 2, child: buttonRadio),
+                      Expanded(
+                          flex: isCheckout && customerId == 38 ? 1 : 2,
+                          child: buttonRadio),
+                      Visibility(
+                        visible: isCheckout && customerId == 38,
+                        child: Expanded(
+                          flex: 1,
+                          child: buttonDiaryEvaluation,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -75,10 +84,10 @@ class SafeGridViewWidget extends StatelessWidget {
           ),
           // botao pesquisa de satisfação
           Visibility(
-            visible: isCheckout,
+            visible: isCheckout && customerId != 38,
             child: Expanded(
               flex: 1,
-              child: customerId == 38 ? buttonDiaryEvaluation : buttonCheckout,
+              child: buttonCheckout,
             ),
           ),
         ],
