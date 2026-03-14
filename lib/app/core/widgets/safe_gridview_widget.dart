@@ -11,6 +11,7 @@ class SafeGridViewWidget extends StatelessWidget {
   final bool isDoctorTV;
   final bool isCheckout;
   final int customerId;
+  final bool showButtonGoals;
   const SafeGridViewWidget(
       {super.key,
       required this.buttonContact,
@@ -22,7 +23,8 @@ class SafeGridViewWidget extends StatelessWidget {
       required this.isDoctorTV,
       required this.buttonCheckout,
       required this.isCheckout,
-      required this.customerId});
+      required this.customerId,
+      required this.showButtonGoals});
 
   @override
   Widget build(BuildContext context) {
@@ -45,19 +47,24 @@ class SafeGridViewWidget extends StatelessWidget {
             child: Row(
               children: [
                 //coluna 1
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    children: [
-                      Expanded(
-                          flex: enUs || isDoctorTV == false ? 3 : 2,
-                          child: customerId == 38
-                              ? buttonCheckout
-                              : buttonDiaryEvaluation),
-                      Visibility(
-                          visible: enUs || isDoctorTV == false ? false : true,
-                          child: Expanded(flex: 1, child: buttonDoctorTv)),
-                    ],
+                Visibility(
+                  visible: showButtonGoals || enUs || isDoctorTV,
+                  child: Expanded(
+                    flex: 1,
+                    child: Column(
+                      children: [
+                        Visibility(
+                            visible: showButtonGoals,
+                            child: Expanded(
+                                flex: enUs || isDoctorTV == false ? 3 : 2,
+                                child: customerId == 38
+                                    ? buttonCheckout
+                                    : buttonDiaryEvaluation)),
+                        Visibility(
+                            visible: enUs || isDoctorTV == false ? false : true,
+                            child: Expanded(flex: 1, child: buttonDoctorTv)),
+                      ],
+                    ),
                   ),
                 ),
                 //coluna 2
@@ -70,7 +77,8 @@ class SafeGridViewWidget extends StatelessWidget {
                           flex: isCheckout && customerId == 38 ? 1 : 2,
                           child: buttonRadio),
                       Visibility(
-                        visible: isCheckout && customerId == 38,
+                        visible:
+                            isCheckout && customerId == 38 && showButtonGoals,
                         child: Expanded(
                           flex: 1,
                           child: buttonDiaryEvaluation,
