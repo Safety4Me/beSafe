@@ -12,6 +12,7 @@ class SafeGridViewWidget extends StatelessWidget {
   final bool isCheckout;
   final int customerId;
   final bool showButtonGoals;
+  final bool showRadio;
   const SafeGridViewWidget(
       {super.key,
       required this.buttonContact,
@@ -24,7 +25,8 @@ class SafeGridViewWidget extends StatelessWidget {
       required this.buttonCheckout,
       required this.isCheckout,
       required this.customerId,
-      required this.showButtonGoals});
+      required this.showButtonGoals,
+      required this.showRadio});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class SafeGridViewWidget extends StatelessWidget {
               : SizedBox(),
           // row com colunas
           Expanded(
-            flex: 3,
+            flex: showRadio ? 3 : 1,
             child: Row(
               children: [
                 //coluna 1
@@ -73,9 +75,11 @@ class SafeGridViewWidget extends StatelessWidget {
                   child: Column(
                     children: [
                       Expanded(flex: 1, child: buttonVideo),
-                      Expanded(
-                          flex: isCheckout && customerId == 38 ? 1 : 2,
-                          child: buttonRadio),
+                      Visibility(
+                          visible: showRadio,
+                          child: Expanded(
+                              flex: isCheckout && customerId == 38 ? 1 : 2,
+                              child: buttonRadio)),
                       Visibility(
                         visible:
                             isCheckout && customerId == 38 && showButtonGoals,

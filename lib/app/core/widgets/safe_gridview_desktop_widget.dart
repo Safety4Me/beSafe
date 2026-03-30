@@ -11,6 +11,8 @@ class SafeGridViewDesktopWidget extends StatelessWidget {
   final bool isDoctorTV;
   final bool isCheckout;
   final bool showButtonGoals;
+  final bool showButtonContact;
+  final bool showRadio;
   const SafeGridViewDesktopWidget(
       {super.key,
       required this.buttonContact,
@@ -22,7 +24,9 @@ class SafeGridViewDesktopWidget extends StatelessWidget {
       required this.isDoctorTV,
       required this.buttonCheckout,
       required this.isCheckout,
-      required this.showButtonGoals});
+      required this.showButtonGoals,
+      required this.showButtonContact,
+      required this.showRadio});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +41,7 @@ class SafeGridViewDesktopWidget extends StatelessWidget {
           // botao fale com a equipe
 
           Visibility(
-            visible: showButtonGoals,
+            visible: showButtonGoals || showButtonContact,
             child: Expanded(
               flex: 2,
               child: buttonContact != null
@@ -55,12 +59,16 @@ class SafeGridViewDesktopWidget extends StatelessWidget {
                     visible: isUS || isDoctorTV == false ? false : true,
                     child: Expanded(flex: 1, child: buttonDoctorTv)),
                 Visibility(
-                  visible: buttonContact != null ? true : false,
+                  visible:
+                      (buttonContact != null && showButtonGoals) ? true : false,
                   child: Expanded(
                       flex: isUS || isDoctorTV == false ? 2 : 1,
                       child: buttonDiaryEvaluation),
                 ),
-                Expanded(flex: 1, child: buttonRadio),
+                Visibility(
+                  visible: showRadio,
+                  child: Expanded(flex: 1, child: buttonRadio),
+                ),
                 Visibility(
                   visible: isCheckout,
                   child: Expanded(
